@@ -1,0 +1,60 @@
+print("Bem-vindo(a) ao app de pedidos de Açaí e Cupuaçu! Desenvolvido por Eduardo Rodrigues.")
+
+total_pedido = 0
+
+while True:
+
+    sabor = input("Digite o sabor desejado (CP para Cupuaçu, AC para Açaí): ").upper()
+
+
+    if sabor not in ['CP', 'AC']:
+
+        print("Sabor inválido. Tente novamente.")
+        continue
+
+    #Input do tamanho
+    tamanho = input("Digite o tamanho desejado (P, M ou G): ").upper()
+
+    # Verificando se o tamanho é válido
+    if tamanho not in ['P', 'M', 'G']:
+        # K. Saída de console para tamanho inválido
+        print("Tamanho inválido. Tente novamente.")
+        continue
+
+    # Fazendo o cálculo do preço com base no sabor e tamanho escolhidos
+    if sabor == 'CP':
+        if tamanho == 'P':
+            preco = 9
+        elif tamanho == 'M':
+            preco = 14
+        else:
+            preco = 18
+    else:  # sabor == 'AC'
+        if tamanho == 'P':
+            preco = 11
+        elif tamanho == 'M':
+            preco = 16
+        else:
+            preco = 20
+
+    # Acumulando os valores do pedido
+    total_pedido += preco
+
+    continuar = input("Deseja pedir mais alguma coisa? (S/N): ").upper()
+
+    if continuar != 'S':
+        break  # Sai do loop se a resposta não for 'S'
+
+
+print(f"Total do pedido: R${total_pedido:.2f}")
+
+# comentarios
+"""
+Neste programa, implementamos um aplicativo de pedidos de Açaí e Cupuaçu. 
+O usuário pode escolher o sabor (CP ou AC) e o tamanho (P, M ou G). 
+O preço é calculado com base nessas escolhas, e o valor total do pedido é acumulado.
+O programa continua pedindo até que o usuário decida sair.
+"""
+
+
+print("Obrigado por usar o meu app de pedidos")
